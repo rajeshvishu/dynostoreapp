@@ -1,0 +1,41 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="container">
+    <h3 class="h3">Shopping list for</h3>
+    <div class="row">
+        <div *ngFor="let product of products;" >
+        <div  col-md-3 col-sm-6>
+            <div class="product-grid6">
+                <div class="product-image6">
+                    <a href="#">
+                        <img class="pic-1" src="{{product.url}}">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">{{product.headline}}</a></h3>
+                    <div class="price">{{product.sellingprice}}
+                        <span>{{product.baseprice}}</span>
+                    </div>
+                    {{theRandomNumber}}people are watching this.
+                </div>
+                <ul class="social">
+                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                    <li><a routerLink="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+
+
+
+
+<hr>
+<app-cart [item]="item" (newItemEvent)="addItem($event)"></app-cart>

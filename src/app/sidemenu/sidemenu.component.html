@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+       <img src=""> <!-- Add your logo if available-->
+       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+   </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <!-- This is your sidenav -->
+    <mat-sidenav style="width: 25%" #sidenav [opened]="true" [mode]="'side'"> 
+       <mat-nav-list>
+         <a mat-list-item [routerLink]="'/products'" routerLinkActive="active-list-item">
+         All Products
+         </a>
+         <a mat-list-item [routerLink]="'/provideLink'" routerLinkActive="active-list-item">
+           Nav2
+         </a>
+       </mat-nav-list>
+    </mat-sidenav>
+  <!-- Content or body of your page-->
+     <mat-sidenav-content>
+        <div style="height: 90vh">
+           <router-outlet></router-outlet>
+        </div>
+     </mat-sidenav-content>
+  </mat-sidenav-container>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row></mat-toolbar-row>
+  </mat-toolbar>
